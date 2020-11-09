@@ -8,6 +8,9 @@ $Global:URI = "https://CUCMIPADDRESS:8443/axl/"
 
 #Replace Version
 $Global:Headers = @{SOAPAction="CUCM:DB ver=11.5";Accept="Accept: text/*"}
+
+#Replace Partition
+$Global:RoutePartition = ""
 #>
 
 if($cred -ne $null){$cred -eq $null}
@@ -959,7 +962,7 @@ Function New-Internal{
     [xml]$global:newblfDirn = @"
     <busyLampField>
         <blfDirn>$global:blfDirn</blfDirn>
-        <routePartition>On Cluster</routePartition>
+        <routePartition>$global:routePartition</routePartition>
         <label>$global:blfLabel</label>
         <associatedBlfSdFeatures />
         <index>$global:blfIndex</index>
