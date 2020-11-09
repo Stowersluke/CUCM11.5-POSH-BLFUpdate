@@ -7,7 +7,7 @@ This requires Powershell 5.1 for Invoke-WebRequest to function.
 
 For Windows 7 you will need to run a .net update that includes PS5.1.
 
-!! READ !!
+!! READ SETUP!!
 
 The DLLs needed for the GUI are in the DLLs folder. The .txt files are the Base64 for each DLL.
 
@@ -16,6 +16,12 @@ The Base64 of the DLLs are put in to the script to bypass having to ensure the D
 The Here-String Variables in the script are EMPTY and you will need to copy the Base64 in to each of them.
 
 Otherwise you will have to load the DLLs yourself.
+
+The URI will need to be set to whichever CUCM you want to use.
+
+The Partition needs to be set to the correct partition that your internal Directory Numbers are located for the BLFs.
+
+If you want to try this on a different version then the Header will need to be updated to your version.
 
 !!      !!
 
