@@ -11,6 +11,9 @@ $Global:Headers = @{SOAPAction="CUCM:DB ver=11.5";Accept="Accept: text/*"}
 
 #Replace Partition
 $Global:RoutePartition = ""
+
+#Prefix for your Directory Numbers, mine is below to be added before the 4-digit extension a user will put in.
+$Global:blfDirnPrefix = "\+1000000"
 #>
 
 if($cred -ne $null){$cred -eq $null}
@@ -955,7 +958,7 @@ Function Check-RadioUpdate{
 #Customize $blfDirn to however you have your DNs formatted. This takes the standard 4-digit extension with \+1000000 in front of it.
 Function New-Internal{
 
-    [string]$global:blfDirn = ("\+1000000" + (Get-Variable *e$indexnumber"numbtext" -ValueOnly).text)
+    [string]$global:blfDirn = ($Global:blfDirnPrefix + (Get-Variable *e$indexnumber"numbtext" -ValueOnly).text)
     [string]$global:blfLabel = (Get-Variable *e$indexnumber"disptext" -ValueOnly).text
     [string]$global:blfIndex = $indexnumber
 
